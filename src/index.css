@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+#banner-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%);
+}
+
+#banner-img {
+  clip-path: polygon(67% 0, 100% 0, 100% 68%, 80% 100%, 0 100%, 32% 51%);
+}
