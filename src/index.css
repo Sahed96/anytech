@@ -7,3 +7,7 @@
 #banner-img {
   clip-path: polygon(67% 0, 100% 0, 100% 68%, 80% 100%, 0 100%, 32% 51%);
 }
+
+#finance{
+  clip-path: polygon(0 0, 100% 0, 100% -20%, 0% 100%);
+}

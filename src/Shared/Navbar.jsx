@@ -27,7 +27,7 @@ const Navbar = () => {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="w-36">
@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-16">
             <a href="#" className="text-blue-500 hover:underline">
               Solutions
             </a>
@@ -45,32 +45,35 @@ const Navbar = () => {
             <a href="#" className="text-blue-500 hover:underline">
               About Us
             </a>
+            <a>
+              {' '}
+              <button className="flex items-center space-x-1 border px-3 py-1 rounded-lg text-blue-500">
+                <Globe size={16} />
+                <span className="flex items-center space-x-1">
+                  EN{' '}
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-chevron-down"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </a>
           </div>
 
           {/* Language & Contact Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="flex items-center space-x-1 border px-3 py-1 rounded-lg text-blue-500">
-              <Globe size={16} />
-              <span className="flex items-center space-x-1">
-                EN{' '}
-                <div>  
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-chevron-down"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-              </span>
-            </button>
             <button className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-orange-600">
               Contact Us
             </button>
