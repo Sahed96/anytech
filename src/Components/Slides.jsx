@@ -79,20 +79,20 @@ const Slides = () => {
     <div>
       <div className="w-full max-w-7xl mx-auto text-center p-6">
         {/* Header */}
-        <h2 className="text-lg mb-8 text-[#1f80f0] uppercase leading-6 tracking-[2.56px] font-bold">
+        <h2 className="text-lg mb-4 text-[#1f80f0] uppercase leading-6 tracking-[2.56px] font-bold">
           Technology built for you
         </h2>
-        <h1 className="text-6xl text-[#0b305b] leading-[110%] font-semibold">
+        <h1 className="text-4xl md:text-6xl text-[#0b305b] leading-[110%] font-semibold">
           The future of finance
         </h1>
 
         {/* Navigation Buttons (Hidden on Mobile) */}
-        <div className="hidden md:flex justify-center space-x-10 mt-12 my-4">
+        <div className="hidden md:flex justify-center space-x-10 mt-8 my-4">
           {slides.map((slide, index) => (
             <motion.button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className="px-6 py-2.5 rounded-full text-xl font-medium transition-all"
+              className="px-4 py-2 rounded-full text-base md:text-xl font-medium transition-all"
               animate={{
                 backgroundColor: currentIndex === index ? '#3b82f6' : '#e5e7eb',
                 color: currentIndex === index ? '#fff' : '#374151',
@@ -115,30 +115,30 @@ const Slides = () => {
               animate="center"
               exit="exit"
               transition={{ duration: 1.0, ease: 'easeInOut' }}
-              className="absolute w-full flex flex-col md:flex-row items-center bg-white shadow-xl rounded-xl p-8 gap-6"
+              className="absolute w-full flex flex-col-reverse md:flex-row items-center bg-white shadow-xl rounded-xl p-4 md:p-8 gap-4 md:gap-6"
             >
               {/* Text Section */}
-              <div className="md:w-1/2 p-2 text-left">
-                <h3 className="text-lg mb-8 text-[#1f80f0] uppercase leading-6 tracking-[2.56px] font-bold">
+              <div className="w-full md:w-1/2 p-2 text-left">
+                <h3 className="text-md md:text-lg mb-4 md:mb-8 text-[#1f80f0] uppercase leading-6 tracking-[2.56px] font-bold">
                   {slides[currentIndex].title}
                 </h3>
-                <h2 className="text-4xl text-[#0b305b] leading-[110%] font-semibold">
+                <h2 className="text-2xl md:text-4xl text-[#0b305b] leading-[110%] font-semibold">
                   {slides[currentIndex].subTitle}
                 </h2>
-                <p className="mt-3 text-gray-600 text-base leading-relaxed">
+                <p className="mt-2 md:mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
                   {slides[currentIndex].description}
                 </p>
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+                <p className="mt-2 md:mt-3 text-gray-600 text-xs md:text-sm leading-relaxed">
                   {slides[currentIndex].description2}
                 </p>
               </div>
 
               {/* Image Section */}
-              <motion.div className="md:w-1/2 lg:w-2/3">
+              <motion.div className="w-full md:w-1/2 lg:w-2/3 mb-4 md:mb-0">
                 <img
                   src={slides[currentIndex].image}
                   alt="Slide Image"
-                  className="w-full h-full md:h-[400px] rounded-xl object-cover"
+                  className="w-full h-auto md:h-[400px] rounded-xl object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -147,7 +147,7 @@ const Slides = () => {
       </div>
       <div
         id="finance"
-        className="bg-[#f8fbfe] min-h-[240px] max-h-[60px] w-full"
+        className="bg-[#f8fbfe] hidden lg:block min-h-[240px] max-h-[60px] w-full"
       ></div>
     </div>
   );

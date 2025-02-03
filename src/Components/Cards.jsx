@@ -1,8 +1,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { motion } from 'framer-motion';
 import ic1 from '../../public/ic1.svg';
 import ic2 from '../../public/ic2.png';
 import ic3 from '../../public/ic3.svg';
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+};
 
 const Cards = () => {
   return (
@@ -17,7 +23,13 @@ const Cards = () => {
       >
         {[ic1, ic2, ic3].map((icon, index) => (
           <SwiperSlide key={index}>
-            <div className="max-w-[360px] rounded-3xl min-h-[295px] bg-[#f7fbfe]">
+            <motion.div
+              className="max-w-[360px] rounded-3xl min-h-[295px] bg-[#f7fbfe]"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={cardVariants}
+            >
               <div className="p-8">
                 <img src={icon} alt={`Icon ${index + 1}`} />
               </div>
@@ -37,7 +49,7 @@ const Cards = () => {
                     : 'We seamlessly combine cutting-edge technologies, resulting in an unparalleled fintech experience for financial institutions.'}
                 </p>
               </div>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>

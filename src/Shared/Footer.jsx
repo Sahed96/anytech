@@ -1,33 +1,26 @@
+import logo from '/logo.png';
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white mt-20 py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Company Name */}
-          <div className="mb-4 md:mb-0">
-            <h2 className="text-2xl font-bold">ANTECH</h2>
-          </div>
-
-          {/* Solutions Section */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-2">Our Solutions</h3>
-            <ul className="space-y-1">
-              <li>AnyCaaS</li>
-              <li>AnyBaaS</li>
-              <li>AnyPaaS</li>
-            </ul>
-          </div>
-
-          {/* Copyright and Links */}
-          <div className="text-center md:text-right mt-4 md:mt-0">
-            <p className="text-sm mb-2">
-              ©2023 All rights reserved. Any Technology Plc Ltd.
-            </p>
-            <a href="#" className="text-sm hover:underline">
-              Privacy Policy
-            </a>
-          </div>
+    <footer className="bg-[#002045] text-white py-8">
+      <div className="flex flex-col md:flex-row bg-[#002045] mb-8 justify-between items-center px-6 md:px-24 gap-4 md:gap-0">
+        <div className="w-40 md:w-52">
+          <img src={logo} alt="Logo" className="w-full h-auto" />
         </div>
+        <div className="flex flex-wrap justify-center items-center gap-4 text-center md:text-left">
+          <p>Our Solutions</p>
+          <hr className="hidden md:block border-white w-8 rotate-90 border" />
+          <p>AnyCaaS</p>
+          <p>AnyBaaS</p>
+          <p>AnyPaaS</p>
+        </div>
+      </div>
+
+      <div className="bg-[#00152d] min-h-20 flex flex-col md:flex-row justify-between items-center px-6 md:px-24 py-4 gap-2 md:gap-0">
+        <p className="text-sm">
+          ©2023 All rights reserved. Any Technology Pte Ltd.
+        </p>
+        <p className="text-sm">Privacy Policy</p>
       </div>
     </footer>
   );

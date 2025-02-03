@@ -95,4 +95,8 @@
   #finance {
     clip-path: none
   }
+
+  #banner2 {
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+  }
 }

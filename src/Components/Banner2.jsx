@@ -45,7 +45,7 @@ const Banner2 = () => {
         <motion.img
           src={svg2}
           alt="WaveLines"
-          className="absolute w-[80%] top-0 left-0 mix-blend-multiply z-20"
+          className="absolute w-[70%] top-0 left-0 mix-blend-multiply z-20"
           variants={svgVariantLeft}
           initial="hidden"
           animate="visible"
@@ -65,7 +65,7 @@ const Banner2 = () => {
         <motion.img
           src={svg7}
           alt="WaveLines"
-          className="absolute w-[90%] bottom-0 left-5 mix-blend-multiply z-10"
+          className="absolute w-[70%] bottom-0 left-5 mix-blend-multiply z-10"
           variants={svgVariantBottom}
           initial="hidden"
           animate="visible"
@@ -73,18 +73,20 @@ const Banner2 = () => {
         />
 
         {/* Text Content */}
-        <div className="pl-[10%] pt-[10%] space-y-10 relative z-30">
-          <h1 className="leading-[120%] text-[60px] font-bold font-Montserrat text-white">
+        <div className="pl-[10%] pt-[40%] lg:pt-[10%] space-y-10 relative z-30">
+          <h1 className="leading-[120%] text-[40px] lg:text-[60px] font-bold font-Montserrat text-white">
             Legacy no longer
           </h1>
           <p className="max-w-auto leading-[150%] text-xl font-semibold text-white">
             Talk to us to find out how we can transform your organisation for
             the future
           </p>
-          <button className="bg-[#fe8b53] flex items-center gap-1.5 px-6 py-4 font-bold text-lg rounded-md text-white">
-            Contact Us
-            <ChevronRight />
-          </button>
+          <div className='px-4'>
+            <button className="bg-[#fe8b53] flex w-full justify-center text-center lg:w-auto items-center gap-1.5 px-6 py-4 font-bold text-lg rounded-md text-white">
+              Contact Us
+              <ChevronRight />
+            </button>
+          </div>
         </div>
       </div>
     </div>
