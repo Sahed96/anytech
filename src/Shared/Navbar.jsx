@@ -83,7 +83,7 @@ const Navbar = () => {
             <button
               className={`${
                 isTransparent
-                  ? 'text-white bg-transparent outline-2'
+                  ? 'text-white bg-transparent border-2 border-white outline-2'
                   : 'text-black bg-orange-500'
               } text-white px-6 py-2 rounded-lg text-xl font-semibold shadow-md flex items-center  space-x-1`}
             >

@@ -33,7 +33,7 @@ const Banner = () => {
       id="banner-bg"
       className="min-h-screen bg-[radial-gradient(59.82%_121.73%_at_-9.66%_130.31%,#00e9ea_0%,#1f80f0_52.08%,#005bc4_100%)] overflow-hidden relative"
     >
-      <div className="pl-[10%] pt-[10%] space-y-6 relative z-30 lg:space-y-10">
+      <div className="lg:pl-[10%] pl-[5%] pt-[20%] lg:pt-[10%] space-y-6 relative z-30 lg:space-y-10">
         <h1 className="leading-[120%] text-[60px] lg:text-[90px] font-bold font-Montserrat text-white">
           Embrace the <br /> future of finance
         </h1>

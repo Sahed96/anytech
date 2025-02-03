@@ -1,53 +1,46 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import ic1 from '../../public/ic1.svg';
 import ic2 from '../../public/ic2.png';
 import ic3 from '../../public/ic3.svg';
 
 const Cards = () => {
   return (
-    <div className="flex justify-center gap-10 items-center">
-      <div className="max-w-[360px] rounded-3xl min-h-[295px] bg-[#f7fbfe]">
-        <div className="p-8 ">
-          <img src={ic1} alt="" />
-        </div>
-        <div className="px-8 space-y-5">
-          <h3 className="text-2xl text-[#0b305b] font-semibold">
-            Full-suite solutions
-          </h3>
-          <p>
-            Experience the ease of integration across various banking and
-            payment functions with our comprehensive suite of solutions.
-          </p>
-        </div>
-      </div>
-      <div className="max-w-[360px] rounded-3xl min-h-[295px] bg-[#f7fbfe]">
-        <div className="p-8 ">
-          <img src={ic2} alt="" />
-        </div>
-        <div className="px-8 space-y-5">
-          <h3 className="text-2xl text-[#0b305b] font-semibold">
-            Simplify the complex
-          </h3>
-          <p>
-            Simplify complex processes and optimise your financial operations by
-            leveraging the power of AI, Blockchain, Cloud Computing, and Big
-            Data.
-          </p>
-        </div>
-      </div>
-      <div className="max-w-[360px] rounded-3xl min-h-[295px] bg-[#f7fbfe]">
-        <div className="p-8 ">
-          <img src={ic3} alt="" />
-        </div>
-        <div className="px-8 space-y-5">
-          <h3 className="text-2xl text-[#0b305b] font-semibold">
-            Cutting-edge tech
-          </h3>
-          <p>
-            We seamlessly combine cutting-edge technologies, resulting in an
-            unparalleled fintech experience for financial institutions.
-          </p>
-        </div>
-      </div>
+    <div className="flex justify-center items-center">
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={1.3}
+        breakpoints={{
+          1024: { slidesPerView: 3, spaceBetween: 40 },
+        }}
+        className="w-full max-w-5xl"
+      >
+        {[ic1, ic2, ic3].map((icon, index) => (
+          <SwiperSlide key={index}>
+            <div className="max-w-[360px] rounded-3xl min-h-[295px] bg-[#f7fbfe]">
+              <div className="p-8">
+                <img src={icon} alt={`Icon ${index + 1}`} />
+              </div>
+              <div className="px-8 space-y-5">
+                <h3 className="text-2xl text-[#0b305b] font-semibold">
+                  {index === 0
+                    ? 'Full-suite solutions'
+                    : index === 1
+                    ? 'Simplify the complex'
+                    : 'Cutting-edge tech'}
+                </h3>
+                <p>
+                  {index === 0
+                    ? 'Experience the ease of integration across various banking and payment functions with our comprehensive suite of solutions.'
+                    : index === 1
+                    ? 'Simplify complex processes and optimize your financial operations by leveraging AI, Blockchain, Cloud Computing, and Big Data.'
+                    : 'We seamlessly combine cutting-edge technologies, resulting in an unparalleled fintech experience for financial institutions.'}
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
