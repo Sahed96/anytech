@@ -1,4 +1,5 @@
 import { ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import pic from '../../public/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg';
 import svg1 from '../assets/backgrounds/ctaMobileWaveLines.svg';
 import svg2 from '../assets/backgrounds/WaveLinesDesktop1.svg';
@@ -9,17 +10,34 @@ import svg6 from '../assets/backgrounds/WaveLinesDesktop3.svg';
 import svg7 from '../assets/backgrounds/WaveLinesDesktop4.svg';
 
 const Banner = () => {
+  const svgVariants = {
+    hidden: (direction) => ({
+      opacity: 0,
+      x: direction === 'left' ? -100 : direction === 'right' ? 100 : 0,
+      y: direction === 'top' ? -100 : direction === 'bottom' ? 100 : 0,
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 1.2, ease: 'easeOut' },
+    },
+    hover: {
+      scale: 1.05,
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    },
+  };
+
   return (
     <section
       id="banner-bg"
-      className="lg:h-[778px] bg-[radial-gradient(59.82%_121.73%_at_-9.66%_130.31%,_#00e9ea_0%,_#1f80f0_52.08%,_#005bc4_100%)] h-auto relative w-full text-white overflow-hidden pt-[30%] md:pt-[20%] lg:pt-0 max-lg:pb-[15%]"
+      className="min-h-screen bg-[radial-gradient(59.82%_121.73%_at_-9.66%_130.31%,#00e9ea_0%,#1f80f0_52.08%,#005bc4_100%)] overflow-hidden relative"
     >
-      {/* Text Content */}
-      <div className="pl-[10%] pt-[10%] space-y-10 relative z-30">
-        <h1 className="leading-[120%] text-[90px] font-bold font-Montserrat text-white">
+      <div className="pl-[10%] pt-[10%] space-y-6 relative z-30 lg:space-y-10">
+        <h1 className="leading-[120%] text-[60px] lg:text-[90px] font-bold font-Montserrat text-white">
           Embrace the <br /> future of finance
         </h1>
-        <p className="max-w-2xl leading-[150%] text-xl font-semibold text-white">
+        <p className="max-w-2xl leading-[150%] text-lg lg:text-xl font-semibold text-white">
           Reimagine financial services with AnyTech’s open platform, distributed
           banking solution that powers transformation
         </p>
@@ -29,54 +47,43 @@ const Banner = () => {
         </button>
       </div>
 
-      {/* Background Image */}
+      <motion.img
+        id='banner-img'
+        src={pic}
+        alt="Banner"
+        className="absolute w-[65%] right-0 left-[35%] top-0 h-full mix-blend-normal z-20 lg:block hidden"
+        variants={svgVariants}
+        initial="hidden"
+        animate="visible"
+        custom="right"
+      />
+
       <div>
-        <img
-          id="banner-img"
-          src={pic}
-          alt="Banner"
-          className="block absolute w-[65%] right-0 left-[35%] top-0 h-full mix-blend-normal z-20"
-        />
+        {[svg1, svg2, svg3, svg4, svg5, svg6, svg7].map((svg, index) => (
+          <motion.img
+            key={index}
+            src={svg}
+            alt="WaveLines"
+            className={`absolute mix-blend-multiply z-20 w-[${80 - index * 5}%]`}
+            variants={svgVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            custom={index % 2 === 0 ? 'left' : 'top'}
+            style={{ top: `${index * 5}%`, left: `${index * 3}%` }}
+          />
+        ))}
       </div>
 
-      {/* SVG Overlays with Blending */}
-      <div>
-        <img
-          src={svg1}
-          alt="WaveLines"
-          className="block absolute w-[85%] right-0 left-0 top-0 h-full mix-blend-multiply z-20"
-        />
-        <img
-          src={svg2}
-          alt="WaveLines"
-          className="block absolute w-[55%] right-0 bottom-[35%] left-0 top-0 h-full mix-blend-multiply z-20"
-        />
-        <img
-          src={svg3}
-          alt="WaveLines"
-          className="block absolute w-[85%] right-0 left-[35%] top-0 h-full mix-blend-multiply z-20"
-        />
-        <img
-          src={svg4}
-          alt="WaveLines"
-          className="block absolute w-[85%] right-[45%] left-0 top-0 h-full mix-blend-multiply z-20"
-        />
-        <img
-          src={svg5}
-          alt="WaveLines"
-          className="block absolute w-[75%] right-[15%] left-0 -top-20 h-full mix-blend-multiply z-20"
-        />
-        <img
-          src={svg6}
-          alt="WaveLines"
-          className="block absolute w-[85%] right-0 left-[35%] top-0 h-full mix-blend-multiply z-20"
-        />
-        <img
-          src={svg7}
-          alt="WaveLines"
-          className="block absolute w-[75%] right-0 left-0 top-0 h-full mix-blend-multiply z-20"
-        />
-      </div>
+      <motion.img
+        src={pic}
+        alt="Banner"
+        className="w-full lg:hidden block mix-blend-normal z-10 mt-4"
+        variants={svgVariants}
+        initial="hidden"
+        animate="visible"
+        custom="right"
+      />
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import Banner from '@/Components/Banner';
+import Banner2 from '@/Components/Banner2';
 import Cards from '@/Components/Cards';
 import Finance from '@/Components/Finance';
 import Icons from '@/Components/Icons';
@@ -16,6 +17,7 @@ const Home = () => {
       <Slides />
       <Numbers />
       <Icons />
+      <Banner2 />
     </div>
   );
 };

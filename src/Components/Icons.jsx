@@ -1,6 +1,4 @@
 import Marquee from 'react-fast-marquee';
-
-// Import all 15 images
 import ic1 from '../../public/logos/1.png';
 import ic2 from '../../public/logos/2.png';
 import ic3 from '../../public/logos/3.png';
@@ -37,7 +35,7 @@ const images = [
 
 const Icons = () => {
   return (
-    <div className="w-full px-4">
+    <div className="w-full pt-20 px-4">
       {/* Grid for larger screens */}
       <div className="hidden md:grid grid-cols-5 gap-6 place-items-center">
         {images.map((img, index) => (
@@ -45,14 +43,14 @@ const Icons = () => {
             key={index}
             src={img}
             alt={`logo-${index + 1}`}
-            className="w-32 h-20 object-contain"
+            className="w-44 h-28 object-contain"
           />
         ))}
       </div>
 
       {/* Marquee for mobile */}
       <div className="md:hidden">
-        <Marquee speed={50} pauseOnHover={true} >
+        <Marquee speed={50} pauseOnHover={true}>
           {images.map((img, index) => (
             <img
               key={index}

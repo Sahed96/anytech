@@ -8,11 +8,11 @@ const Philosophy = () => {
   return (
     <div>
       {/* Heading Section */}
-      <div className="flex mb-10 justify-evenly items-center flex-col">
+      <div className="flex text-center px-5 lg:px-0 mb-10 justify-evenly items-center flex-col">
         <p className="text-lg mb-8 text-[#1f80f0] leading-6 tracking-[2.56px] font-bold">
           OUR PHILOSOPHY
         </p>
-        <h2 className="text-6xl text-[#0b305b] leading-[110%] font-semibold">
+        <h2 className="lg:text-6xl text-5xl text-[#0b305b] leading-[110%] font-semibold">
           Human-centred innovation
         </h2>
       </div>
